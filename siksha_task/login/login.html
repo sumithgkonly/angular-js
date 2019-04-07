@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+    <title>
+          Log in
+    </title>
+    <script src="" ></script>
+    <link rel="stylesheet" href="login.css" />
+    <script src=""></script>
+   
+    <script src="" ></script>
+</head>
+    <body>
+       <header>
+  <div class="header-container">
+    <div class="left"><a href="#">IP App</a>
+      </div>
+    <div class="right">
+      <a href="#">Try Demo</a> | <a href="#"><i class="fa fa-question-circle"></i></a>
+    </div>
+  </div>
+</header>
+<section id="section-main" class="section-login">
+  <div class="section-container">
+    <div class="app-logo">
+      <img src="https://s27.postimg.org/v08r9jveb/icon_white.png" alt="" />
+    </div>
+    <h1>Sign in to IP App</h1>
+    <div class="login-form-container">
+         <form name="login" class="new_user" id="new_user">
+        <div class="field">
+          <i class="fa fa-user"></i>
+          <input autofocus="autofocus" id="user_email"  name="userid" type="email" value="" placeholder="Email" />
+        </div>
+        <div class="field">
+          <i class="fa fa-lock"></i>
+          <input autocomplete="off" id="user_password" name="pswrd" type="password" placeholder="Password" />
+        </div>
+        <div class="field">
+          <input name="user[remember_me]" type="hidden" value="0" />
+          <input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" />
+          <label for="user_remember_me">Remember me</label>
+        </div>
+        <div class="actions">
+          <input name="commit" type="button" onclick="check(this.form)" value="Login"    />
+        </div>
+      </form>
+    </div>
+    <hr />
+    <div class="login-other">
+      <a href="#">Forgot your password?</a>
+      <br /> Don't have an account? <a href="#"> Create one now</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-item"><a href="#">About</a></div>
+    <div class="footer-item"><a href="">Privacy Policy</a></div>
+    <div class="footer-item"><a href="">Terms and Conditions</a></div>
+  </div>
+</footer>
+    </body>
+    
+    <script>
+    function check(form){
+        if(form.userid.value == "admin@test.com" && form.pswrd.value == "admin")
+            {
+                window.open('../index.html')
+            }
+            else if(form.userid.value == "superadmin@test.com" && form.pswrd.value == "superadmin")
+            {
+                window.open('../superUser/index.html')
+            }
+             {
+               alert("Error Password or Username")
+              }
+        
+            
+}
+        
+        
+        
+    </script>
+    
+    
+</html>
