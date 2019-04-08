@@ -1,7 +1,7 @@
 console.log('loading');
 
 
-var app = angular.module('add-row', ['ngStorage']);
+var app = angular.module('add-row', ['ngStorage', 'ng-ip-address']);
 
   app.controller('MainCtrl', function($scope, $sessionStorage){
       
@@ -10,6 +10,7 @@ var app = angular.module('add-row', ['ngStorage']);
   $scope.addNewInpFd = function() {
      if($scope.InpFd.length == 10){  
             document.getElementById("addButton").disabled = true;
+            alert('Max Ip addess allocation is completed');
      }else{
          var newItemNo = $scope.InpFd.length+1;
          $scope.InpFd.push({'inputId':'inpuTxt'+newItemNo});
@@ -27,12 +28,14 @@ var app = angular.module('add-row', ['ngStorage']);
     
 
   $scope.removeInpFd = function(index) {
-    // remove the row specified in index
-    $scope.InpFd.splice( index, 1);
-    // if no rows left in the array create a blank array
-   
-		
-  
+      if($scope.InpFd.length == 1){
+            alert('Cannot Remove the First element');       
+        }else{
+            $scope.InpFd.splice( index, 1);
+        }
+             
+      
+     
   };
 $scope.saveValidate = function ValidateIPaddress(inputText) {  
    
